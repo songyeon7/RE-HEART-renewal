@@ -1,23 +1,27 @@
 import React from 'react';
 import styled from "styled-components";
-import aed from '../../assets/ch1.png';
+import aed from '../../assets/AED.svg';
 import {Contents, MainContainer, MainWrapper, Point, MiniTitle, Title} from "../../atoms/Atomic";
 
-const Chap1 = ({scRef}) => {
+const Prepare = ({scRef}) => {
   return (
     <MainContainer ref={scRef}>
       <MainWrapper gap={'100px'}>
         <TempContainer>
           <div>
-            <MiniTitle >
-            <Point size={'48'} weight={'600'}>1. 전원 켜기</Point> 
-            </MiniTitle>
+            <Title >
+            <Point size={'48'} weight={'600'}>자동심장충격기(AED) </Point> 사용법
+            </Title>
             <Blank num={'4vh'}/>
             <Contents>
               <div ><br/>
-              먼저 심장충격기(자동제세동기)를 <br/>
-              심폐소생술에 방해가 되지않는 위치에 놓은 뒤에 <br/>
-              전원 버튼을 누른다.<br/><br/>
+              <div>
+              <MiniTitle>준비하기</MiniTitle><br/><br/>
+              </div>
+              환자의 확인(신고 병행 119 또는 1339)<br/>
+              자동심장충격기(AED)가 준비되기 전까지 심폐소생술(CPR)을 합니다.<br/>
+              심장충격기(자동제세동기)는 반응과 정상적인 호흡이 없는 심정지 환자에게만 사용해야 하며, <br/>
+              심폐소생술 시행 중에 심장충격기(자동제세동기)가 도착하면 지체 없이 적용해야 한다. <br/>
               </div>
             </Contents>
           </div>
@@ -29,15 +33,13 @@ const Chap1 = ({scRef}) => {
 };
 
 const Aed = styled.img`
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   @media(max-width: 1080px) {
-    height: 250px;
-    width: 250px;
+    height: 430px;
+    width: 242px;
   }
 `;
 const Blank = styled.div`
@@ -56,4 +58,4 @@ const TempContainer = styled.div`
   }
 `;
 
-export default Chap1;
+export default Prepare;

@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Chap1 from "../components/About/Chap1";
+import Prepare from "../components/About/Prepare";
+import Chap1 from '../components/About/Chap1';
 
 
 const Main = () => {
@@ -15,6 +16,7 @@ const Main = () => {
   return (
     <>
       <Header isNotHome={false}/>
+      <Prepare scRef={ref}/>
       <Chap1 scRef={ref}/>
       <Footer/>
     </>

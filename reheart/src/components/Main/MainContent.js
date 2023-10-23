@@ -39,8 +39,8 @@ const Aed = styled.img`
   flex-shrink: 0;
   border-radius: 5px;
   @media(max-width: 1080px) {
-    height: 430px;
-    width: 242px;
+    height: 250px;
+    width: 250px;
   }
 `;
 const Blank = styled.div`
