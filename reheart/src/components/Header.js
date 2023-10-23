@@ -69,7 +69,7 @@ const Desktop = styled.div`
   @media(max-width: 730px) {display: none}
 `;
 const TextButton = styled(Link)`
-  color: ${(props) => (props.navBar ? "var(--text-contents, #524437)" : "#f5f5f5")};
+  color: ${(props) => (props.navBar ? "var(--text-contents, #524437)" : "#9A9A9A")};
   font-family: 'Pretendard', sans-serif;
   font-size: 19px;
   font-style: normal;
@@ -91,7 +91,7 @@ const Right = styled.div`
   gap: 50px;
 `;
 const Left = styled.img`
-  width: 100px;
+  width: 150px;
   height: 30px;
 `;
 const HeaderContainer = styled.div`
