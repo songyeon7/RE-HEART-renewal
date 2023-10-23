@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import maps from '../../assets/map_seoul.svg';
 import {Contents, MainContainer, MainWrapper, Point, MiniTitle} from "../../atoms/Atomic";
 
 const MainMap = ({scRef}) => {
@@ -24,15 +25,16 @@ const MainMap = ({scRef}) => {
               </div>
             </Contents>
           </div>
+          <Maps src={maps}/>
         </TempContainer>
       </MainWrapper>
     </MainContainer>
   );
 };
 
-const News = styled.img`
-  width: 305px;
-  height: 542px;
+const Maps = styled.img`
+  width: 400px;
+  height: 400px;
   flex-shrink: 0;
   border-radius: 5px;
   @media(max-width: 1080px) {
@@ -55,19 +57,19 @@ const TempContainer = styled.div`
     gap: 20px;
   }
 `;
-const IntroducePoint = styled.div`
-  color: var(--text-title, #2C231E);
-  font-family: 'Pretendard';
-  font-size: 25px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  @media(max-width: 1080px) {
-    font-size: 22px;
-  }
-`;
+// const IntroducePoint = styled.div`
+//   color: var(--text-title, #2C231E);
+//   font-family: 'Pretendard';
+//   font-size: 25px;
+//   font-style: normal;
+//   font-weight: 600;
+//   line-height: normal;
+//   @media(max-width: 1080px) {
+//     font-size: 22px;
+//   }
+// `;
 const Button = styled.button`
-  background-color: var(--button-bg, #007BFF); // 버튼 배경색을 정의하며 기본값은 파란색
+  background-color: var(--button-bg, #FF9B9B); // 버튼 배경색을 정의하며 기본값은 파란색
   color: var(--button-text, #fff); // 버튼 텍스트 색상을 정의하며 기본값은 흰색
   border: none;
   border-radius: 5px;
@@ -78,7 +80,7 @@ const Button = styled.button`
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: var(--button-hover-bg, #0056B3); // 마우스 호버시 배경색을 정의하며 기본값은 더 어두운 파란색
+    background-color: var(--button-hover-bg, #D97D7D); // 마우스 호버시 배경색을 정의하며 기본값은 더 어두운 파란색
   }
 `;
 
