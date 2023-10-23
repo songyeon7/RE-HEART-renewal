@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Mapjs from '../components/Map/Mapjs';
 
 const Map = () => {
     const ref = React.useRef(null);
@@ -13,6 +14,7 @@ const Map = () => {
     return (
         <>
         <Header isNotHome={false}/>
+        <Mapjs scRef={ref}/>
         <Footer/>
         </>
     );

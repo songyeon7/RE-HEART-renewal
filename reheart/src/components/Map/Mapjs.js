@@ -17,7 +17,7 @@ const MapComponent = () => {
     setMap(initializedMap);
 
     // ... 기타 초기화 로직
-    const mydata = mapJson.data
+    // const mydata = mapJson.data
     // 현재 위치 기반 검색 로직 (navigator.geolocation)
     function success({ coords, timestamp }) {
       const latitude = coords.latitude;
@@ -35,13 +35,13 @@ const MapComponent = () => {
         }
 
         if (tmpser < 20) {
-          const markerPosition = new kakao.maps.LatLng(mydata[i].wgs84lat, mydata[i].wgs84lon);
+          const markerPosition = new kakao.maps.LatLng(mapJson.data[i].wgs84lat, mapJson.data[i].wgs84lon);
           onchecked = true;
           // 마커를 생성합니다
           const marker = new kakao.maps.Marker({
             map: initializedMap,
             position: markerPosition,
-            title: mydata[i].buildplace,
+            title: mapJson.data[i].buildplace,
           });
           setMarkers((prevMarkers) => [...prevMarkers, marker]);
         }
@@ -64,16 +64,16 @@ const MapComponent = () => {
     markers.forEach((marker) => marker.setMap(null)); // 기존 마커 제거
 
     for (let i = 0; i < 5000; i++) {
-      const stringVal = mydata[i].buildaddress;
+      const stringVal = mapJson.data[i].buildaddress;
       const substring = searchInput;
 
       if (stringVal.includes(substring)) {
-        const markerPosition = new kakao.maps.LatLng(mydata[i].wgs84lat, mydata[i].wgs84lon);
+        const markerPosition = new kakao.maps.LatLng(mapJson.data[i].wgs84lat, mapJson.data[i].wgs84lon);
         // 마커를 생성합니다
         const marker = new kakao.maps.Marker({
           map: map,
           position: markerPosition,
-          title: mydata[i].buildplace,
+          title: mapJson.data[i].buildplace,
         });
         setMarkers((prevMarkers) => [...prevMarkers, marker]);
       }
