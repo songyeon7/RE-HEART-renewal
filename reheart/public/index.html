@@ -16,29 +16,40 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <title>RE:HEART</title>
+    <style>
+        body {
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body style="overflow: unset;">
+    <div id="_next">
+        <header style="position: sticky;top:0;display:flex;justify-content:space-between;width:100%;height:60px;background:#FFF5F5;box-shadow:0px 4px 20px rgba(96, 96, 96, 0.25);z-index:5">
+            <!-- Header Content -->
+        </header>
+        <div style="flex-grow: 1;display:flex;flex-direction:row;margin-inline:30px;height:50%;">
+            <!-- Content -->
+        </div>
+    </div>
+    <div style="position:relative;">
+        <div id="map" style="width:100%;height:700px;margin-top: 10px;">
+            <!-- Map Content -->
+        </div>
+        <div style="position: absolute;">
+            <input type="text" id="tbox" onKeypress="javascript:if(event.keyCode==13) {
+                $('#searchButton').trigger('click');
+            }" style="width: 1000px; height: 30px; text-align: center; border: 1px white; border-radius: 5px;position: fixed;left: 270px;top: 130px; z-index: 10;">
+        </div>
+        <div style="position: absolute;">
+            <button id="searchButton" style="position: fixed;right: 140px;top: 130px; z-index: 10;"></button>
+        </div>
+        <div style="position: absolute;">
+            <div class="call119" style="border: 3px solid #ff9b9b; border-radius: 100%; background-color: #fff5f5;width: 50px; height: 50px; text-align: center; z-index: 10; position: fixed; left: 100px;top: 650px;">
+                <a href="tel:119"><img src="images/call.svg" style="width: 30px; height:30px; margin-top: 10px;"> </a>
+            </div>
+        </div>
+    </div>
+    <script src="Mapjs.js" type="module"></script>
   </body>
 </html>
