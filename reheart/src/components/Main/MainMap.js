@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import maps from '../../assets/map_seoul.svg';
+import { Link } from 'react-router-dom';
 import {Contents, MainContainer, MainWrapper, Point, MiniTitle} from "../../atoms/Atomic";
 
 const MainMap = ({scRef}) => {
@@ -20,7 +21,9 @@ const MainMap = ({scRef}) => {
               검색을 통해서 찾아볼 수도 있어요<br/><br/>
               </div>
               <div >
-              <Button >찾으러 가보기</Button>
+              <Link to="/map">
+                <Button >찾으러 가보기</Button>
+              </Link>
               </div>
             </Contents>
           </div>
