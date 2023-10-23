@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
-import Background from '../../assets/backgroundimg.png';
 import {Contents, MainContainer, MainWrapper, Point, Title} from "../../atoms/Atomic";
 
 const MainContent = ({scRef}) => {
   return (
-    <CoverContainer>
     <MainContainer ref={scRef}>
       <MainWrapper gap={'100px'}>
         <TempContainer>
           <div>
             <Title >
-            작년 상반기 <Point size={'36'} weight={'600'}>심정지환자</Point> 1만7668명 발생…생존률 7.3%
+            작년 상반기 <Point size={'36'} weight={'600'}>급성심정지환자</Point> 1만7668명 발생…생존률 7.3%
             </Title>
             <Blank num={'4vh'}/>
             <Contents>
@@ -37,7 +35,6 @@ const MainContent = ({scRef}) => {
         </TempContainer>
       </MainWrapper>
     </MainContainer>
-    </CoverContainer>
   );
 };
 
@@ -56,24 +53,5 @@ const TempContainer = styled.div`
     gap: 20px;
   }
 `;
-const IntroducePoint = styled.div`
-  color: var(--text-title, #2C231E);
-  font-family: 'Pretendard';
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  @media(max-width: 1080px) {
-    font-size: 22px;
-  }
-`;
-const CoverContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-image: url(${Background});
-  margin: 0 auto;
-  background-size: 100% 100%;
-`;
+
 export default MainContent;

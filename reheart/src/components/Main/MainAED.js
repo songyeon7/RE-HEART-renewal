@@ -10,7 +10,7 @@ const MainAED = ({scRef}) => {
         <TempContainer>
           <div>
             <MiniTitle >
-            내 주변 <Point size={'35'} weight={'600'}>AED기기</Point> 위치 찾아보기
+            내 주변 <Point size={'36'} weight={'600'}>AED기기</Point> 위치 찾아보기
             </MiniTitle>
             <Blank num={'4vh'}/>
             <Contents>
@@ -56,21 +56,6 @@ const TempContainer = styled.div`
   @media(max-width: 800px) {
     flex-direction: column;
     gap: 20px;
-  }
-`;
-const Button = styled.button`
-  background-color: var(--button-bg, #FF9B9B); // 버튼 배경색을 정의하며 기본값은 파란색
-  color: var(--button-text, #fff); // 버튼 텍스트 색상을 정의하며 기본값은 흰색
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: var(--button-hover-bg, #D97D7D); // 마우스 호버시 배경색을 정의하며 기본값은 더 어두운 파란색
   }
 `;
 
