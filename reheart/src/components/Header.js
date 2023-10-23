@@ -4,6 +4,7 @@ import Logo from '../assets/logo.png';
 import OpenImg from '../assets/open.svg'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 const Header = (props) => {
   const [nav, setNav] = useState(props.isNotHome);

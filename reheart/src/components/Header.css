@@ -1,0 +1,16 @@
+/* Header.css */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFF5F5;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100; /* 다른 컨텐츠 위에 헤더 표시 */
+  }
+  
+  

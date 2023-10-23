@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import './Footer.css';
 
 const Footer = () => {
   return (
@@ -32,7 +33,7 @@ const Contents = styled.div`
     font-size: 12px;
   }
   @media(max-width: 740px) {
-    font-size: 16px;
+    font-size: 12px;
   }
 `;
 const Texts = styled.div`

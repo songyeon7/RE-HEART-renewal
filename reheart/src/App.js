@@ -5,10 +5,12 @@ import Footer from './components/Footer';
 import Main from './pages/Main';
 import About from './pages/About';
 import Map from './pages/Map';
+import './App.css';
 
 function App() {
   return (
     <Router>
+      <Header />
       <div>
         <Routes>
           <Route path="/" element={<Main />} />
@@ -16,6 +18,7 @@ function App() {
           <Route path="/map" element={<Map />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
