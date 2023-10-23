@@ -10,13 +10,11 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/about" element={<About />} />
           <Route path="/map" element={<Map />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

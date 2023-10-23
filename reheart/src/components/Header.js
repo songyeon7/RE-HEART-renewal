@@ -1,13 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+import logo from '../assets/logo.png';
 
 function Header() {
   return (
-    <header>
+    <header className="header-container">
       <div className="logo">
-        {/* 로고 이미지 또는 텍스트 */}
+        <img src={logo} alt="로고" />
       </div>
       <nav>
-        {/* 메뉴 항목들 */}
+        <ul>
+          <li>
+            <Link to="/map">지도</Link>
+          </li>
+          <li>
+            <Link to="/description">설명</Link>
+          </li>
+          <li>
+            <Link to="/about">소개</Link>
+          </li>
+        </ul>
       </nav>
     </header>
   );
