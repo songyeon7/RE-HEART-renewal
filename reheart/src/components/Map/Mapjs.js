@@ -1,122 +1,131 @@
-import React, { useEffect, useState } from 'react';
-import mapJson from './/files/data.json';
+import React, { useState, useEffect } from 'react';
 
-const MapComponent = () => {
-  const [map, setMap] = useState(null);
-  const [searchInput, setSearchInput] = useState('');
-  const [markers, setMarkers] = useState([]);
+const Mapjs = () => {
+    const [map, setMap] = useState(null);
+    const [markers, setMarkers] = useState([]); // Define the markers state variable
+    const [searchInput, setSearchInput] = useState('');
 
-  useEffect(() => {
-    // ComponentDidMount 로직
-    const mapOption = {
-      center: new kakao.maps.LatLng(37.542268, 126.967049),
-      level: 3,
+    useEffect(() => {
+        // ComponentDidMount 로직
+        const mapOption = {
+            center: new window.kakao.maps.LatLng(37.542268, 126.967049),
+            level: 3,
+        };
+
+        const initializedMap = new window.kakao.maps.Map(document.getElementById('map'), mapOption);
+        setMap(initializedMap);
+
+        // ... (위 코드에서 변경 없음)
+
+        // 위치 이름 기반 검색 함수
+        function handleSearch() {
+            markers.forEach((marker) => marker.setMap(null)); // 기존 마커 제거
+            setMarkers([]); // 마커 배열 초기화
+
+            for (let i = 0; i < 5000; i++) {
+                const stringVal = window.mapJson.data[i].buildaddress;
+                const substring = searchInput;
+
+                if (stringVal.includes(substring)) {
+                    const markerPosition = new window.kakao.maps.LatLng(window.mapJson.data[i].wgs84lat, window.mapJson.data[i].wgs84lon);
+                    // 마커를 생성합니다
+                    const marker = new window.kakao.maps.Marker({
+                        map: map,
+                        position: markerPosition,
+                        title: window.mapJson.data[i].buildplace,
+                    });
+                    setMarkers((prevMarkers) => [...prevMarkers, marker]);
+                }
+            }
+        }
+    }, []);
+
+    // ... (위 코드에서 변경 없음)
+
+    const mapStyles = {
+        width: '100%',
+        height: '500px',
     };
 
-    const initializedMap = new kakao.maps.Map(document.getElementById('map'), mapOption);
-    setMap(initializedMap);
+    const searchInputStyles = {
+        width: '200px',
+        height: '30px',
+        marginRight: '10px',
+    };
 
-    // ... 기타 초기화 로직
-    // const mydata = mapJson.data
-    // 현재 위치 기반 검색 로직 (navigator.geolocation)
-    function success({ coords, timestamp }) {
-      const latitude = coords.latitude;
-      const longitude = coords.longitude;
-      alert(`위도: ${latitude}, 경도: ${longitude}, 위치 반환 시간: ${timestamp}`);
+    const searchButtonStyles = {
+        width: '50px',
+        height: '30px',
+    };
 
-      // 기존 위치 기반 검색 로직 이어서 작성
+    const Mapjs = () => {
+        const [map, setMap] = useState(null);
+        const [markers, setMarkers] = useState([]); // Define the markers state variable
+        const [searchInput, setSearchInput] = useState('');
 
-      for (let i = 0; i < 5000; i++) {
-        // ...
+        useEffect(() => {
+            // ComponentDidMount 로직
+            const mapOption = {
+                center: new window.kakao.maps.LatLng(37.542268, 126.967049),
+                level: 3,
+            };
 
-        if (onchecked === true) {
-          // setMarkers(null); // React에서 상태 업데이트
-          setMarkers([]);
+            const initializedMap = new window.kakao.maps.Map(document.getElementById('map'), mapOption);
+            setMap(initializedMap);
+
+            // ... (위 코드에서 변경 없음)
+
+        }, []);
+
+        // 위치 이름 기반 검색 함수
+        function handleSearch() {
+            markers.forEach((marker) => marker.setMap(null)); // 기존 마커 제거
+            setMarkers([]); // 마커 배열 초기화
+
+            for (let i = 0; i < 5000; i++) {
+                const stringVal = window.mapJson.data[i].buildaddress;
+                const substring = searchInput;
+
+                if (stringVal.includes(substring)) {
+                    const markerPosition = new window.kakao.maps.LatLng(window.mapJson.data[i].wgs84lat, window.mapJson.data[i].wgs84lon);
+                    // 마커를 생성합니다
+                    const marker = new window.kakao.maps.Marker({
+                        map: map,
+                        position: markerPosition,
+                        title: window.mapJson.data[i].buildplace,
+                    });
+                    setMarkers((prevMarkers) => [...prevMarkers, marker]);
+                }
+            }
         }
 
-        if (tmpser < 20) {
-          const markerPosition = new kakao.maps.LatLng(mapJson.data[i].wgs84lat, mapJson.data[i].wgs84lon);
-          onchecked = true;
-          // 마커를 생성합니다
-          const marker = new kakao.maps.Marker({
-            map: initializedMap,
-            position: markerPosition,
-            title: mapJson.data[i].buildplace,
-          });
-          setMarkers((prevMarkers) => [...prevMarkers, marker]);
-        }
-      }
-    }
+        const mapStyles = {
+            width: '100%',
+            height: '500px',
+        };
 
-    function getUserLocation() {
-      if (!navigator.geolocation) {
-        throw "위치 정보가 지원되지 않습니다.";
-      }
-      navigator.geolocation.getCurrentPosition(success);
-    }
+        const searchInputStyles = {
+            width: '200px',
+            height: '30px',
+            marginRight: '10px',
+        };
 
-    getUserLocation();
-  }, []); // 빈 배열을 전달하여 ComponentDidMount와 같은 동작을 수행
+        const searchButtonStyles = {
+            width: '50px',
+            height: '30px',
+        };
 
-  // 위치 이름 기반 검색 함수
-  function handleSearch() {
-    // clusterer.clear();
-    markers.forEach((marker) => marker.setMap(null)); // 기존 마커 제거
-
-    for (let i = 0; i < 5000; i++) {
-      const stringVal = mapJson.data[i].buildaddress;
-      const substring = searchInput;
-
-      if (stringVal.includes(substring)) {
-        const markerPosition = new kakao.maps.LatLng(mapJson.data[i].wgs84lat, mapJson.data[i].wgs84lon);
-        // 마커를 생성합니다
-        const marker = new kakao.maps.Marker({
-          map: map,
-          position: markerPosition,
-          title: mapJson.data[i].buildplace,
-        });
-        setMarkers((prevMarkers) => [...prevMarkers, marker]);
-      }
-    }
-  }
-
-  return (
-    <div>
-      <div id="map" style={mapStyles}></div>
-      <input
-        type="text"
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-        style={searchInputStyles}
-      />
-      <button onClick={handleSearch} style={searchButtonStyles}></button>
-    </div>
-  );
+        return (
+            <div>
+                <div id="map" style={mapStyles}></div>
+                <input
+                    type="text"
+                    value={searchInput}
+                    onChange={(e) => setSearchInput(e.target.value)}
+                    style={searchInputStyles}
+                />
+                <button onClick={handleSearch} style={searchButtonStyles}>Search</button>
+            </div>
+        );
+    };
 };
-
-const mapStyles = {
-  width: '100%',
-  height: '700px',
-  marginTop: '10px',
-};
-
-const searchInputStyles = {
-  width: '1000px',
-  height: '30px',
-  textAlign: 'center',
-  border: '1px white',
-  borderRadius: '5px',
-  position: 'fixed',
-  left: '270px',
-  top: '130px',
-  zIndex: 10,
-};
-
-const searchButtonStyles = {
-  position: 'fixed',
-  right: '140px',
-  top: '130px',
-  zIndex: 10,
-};
-
-export default MapComponent;
