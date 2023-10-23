@@ -19,7 +19,7 @@ const Footer = () => {
 };
 
 const Contents = styled.div`
-  color: #DBDBDB;
+  color: #3f3f3f;
   font-family: Pretendard;
   font-size: 16px;
   font-style: normal;
@@ -74,7 +74,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #3F3F3F;
+  background: #fff5f5;
   @media(max-width: 1023px) {
     height: 200px;
   }
