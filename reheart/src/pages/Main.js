@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MainContent from "../components/Main/MainContent";
 import MainMap from '../components/Main/MainMap';
+import MainAED from '../components/Main/MainAED';
 
 
 const Main = () => {
@@ -18,6 +19,7 @@ const Main = () => {
       <Header isNotHome={false}/>
       <MainMap scRef={ref}/>
       <MainContent scRef={ref}/>
+      <MainAED scRef={ref}/>
       <Footer/>
     </>
   );
