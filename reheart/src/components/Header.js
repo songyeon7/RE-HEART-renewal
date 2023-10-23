@@ -101,7 +101,7 @@ const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   margin: 0 auto;
-  background-color: ${(props) => (props.navBar ? "rgba(255, 255, 255, 0.8)" : "transparent")};
+  background-color: ${(props) => (props.navBar ? "rgba(255, 255, 255, 0.8)" : "#fff5f5")};
   border-bottom: 1.5px solid ${(props) => (props.navBar ? "rgba(0, 0, 0, 0.2)" : "rgba(0, 0, 0, 0)")};
   z-index: 10;
   transition-property: background-color, border-bottom-color;
