@@ -8,10 +8,9 @@ const MainAED = ({scRef}) => {
     <MainContainer ref={scRef}>
       <MainWrapper gap={'100px'}>
         <TempContainer>
-         <Aed src={aed}/>
           <div>
             <MiniTitle >
-            내 주변 <Point size={'36'} weight={'600'}>AED기기</Point> 위치 찾아보기
+            <Point size={'36'} weight={'600'}>자동심장충격기(AED) </Point> 사용법
             </MiniTitle>
             <Blank num={'4vh'}/>
             <Contents>
@@ -27,6 +26,7 @@ const MainAED = ({scRef}) => {
               </div>
             </Contents>
           </div>
+          <Aed src={aed}/>
         </TempContainer>
       </MainWrapper>
     </MainContainer>
