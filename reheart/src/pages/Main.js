@@ -16,8 +16,8 @@ const Main = () => {
   return (
     <>
       <Header isNotHome={false}/>
-      <MainContent scRef={ref}/>
       <MainMap scRef={ref}/>
+      <MainContent scRef={ref}/>
       <Footer/>
     </>
   );

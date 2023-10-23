@@ -17,6 +17,10 @@ const Header = (props) => {
       })
     }
   }, )
+  const toggleSideBar = () => {
+    setSideBar(!sideBar); // 메뉴 가시성을 토글합니다.
+  };
+  
 
   return (
     <>
@@ -37,11 +41,17 @@ const Header = (props) => {
         <HeaderContainer navBar={nav}>
           <HeaderWrapper>
             <TextButton navBar={nav} to={'/'}><Left src={Logo}/></TextButton>
-            {
-              sideBar?
-                <SideButton navBar={nav}></SideButton>:
-                <SideButton navBar={nav}><SideButtonImg src={OpenImg} alt="open image"/></SideButton>
-            }
+              <SideButton navBar={nav} onClick={toggleSideBar}>
+              <SideButtonImg src={OpenImg} alt="open image" />
+            </SideButton>
+            {sideBar && (
+            <MobileMenu>
+              <TextButton navBar={nav} to={'/'}>홈</TextButton>
+              <TextButton navBar={nav} to={'/Map'}>지도</TextButton>
+              <TextButton navBar={nav} to={'/About'}>설명</TextButton>
+              <TextButton navBar={nav} to={'/Contact'}>소개</TextButton>
+            </MobileMenu>
+            )}
           </HeaderWrapper>
         </HeaderContainer>
       </Mobile>
@@ -114,6 +124,16 @@ const HeaderWrapper = styled.div`
   height: 60px;
   justify-content: space-between;
   align-items: center;
+`;
+const MobileMenu = styled.div`
+position: absolute;
+top: 60px;
+left: 0;
+width: 100%;
+background-color: #FFF5F5;
+display: flex;
+flex-direction: column;
+z-index: 1;
 `;
 
 export default Header;

@@ -42,16 +42,6 @@ const MainContent = ({scRef}) => {
   );
 };
 
-const News = styled.img`
-  width: 305px;
-  height: 542px;
-  flex-shrink: 0;
-  border-radius: 5px;
-  @media(max-width: 1080px) {
-    height: 430px;
-    width: 242px;
-  }
-`;
 const Blank = styled.div`
   width: 0;
   height: ${(props) => props.num};
