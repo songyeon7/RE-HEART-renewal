@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import './Header.css';
 import Logo from '../assets/logo.png';
 import OpenImg from '../assets/open.svg'
 import styled from 'styled-components';
