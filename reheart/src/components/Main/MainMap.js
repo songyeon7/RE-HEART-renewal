@@ -20,7 +20,7 @@ const MainMap = ({scRef}) => {
 
               {/* <IntroducePoint >오리는 귀여워요 우주 좋아 <Point size={'25'} weight={'600'}>오리는 귀여워요 우주 좋아 </Point>332</IntroducePoint><Blank num={'1.5vh'}/> */}
               <div >
-              <button >찾으러 가보기</button>
+              <Button >찾으러 가보기</Button>
               </div>
             </Contents>
           </div>
@@ -66,4 +66,27 @@ const IntroducePoint = styled.div`
     font-size: 22px;
   }
 `;
+const Button = styled.button`
+  background-color: var(--button-bg, #007BFF); // 버튼 배경색을 정의하며 기본값은 파란색
+  color: var(--button-text, #fff); // 버튼 텍스트 색상을 정의하며 기본값은 흰색
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--button-hover-bg, #0056B3); // 마우스 호버시 배경색을 정의하며 기본값은 더 어두운 파란색
+  }
+`;
+
+// const CustomButton = ({ text, onClick }) => {
+//   return (
+//     <StyledButton onClick={onClick}>
+//       {text}
+//     </StyledButton>
+//   );
+// };
 export default MainMap;
