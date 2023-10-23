@@ -51,3 +51,15 @@ export const Point = styled.span`
   -webkit-background-clip: text;
   -webkit-text-fill-color: #FF9B9B;
 `;
+export const MiniTitle = styled.div`
+  width: auto;
+  color: var(--text-title, #2C231E);
+  font-family: 'Pretendard';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  @media(max-width: 1080px){
+    font-size: 27px;
+  }
+`;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/logo.svg';
 import OpenImg from '../assets/open.svg'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
