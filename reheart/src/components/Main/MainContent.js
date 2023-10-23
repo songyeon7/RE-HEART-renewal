@@ -14,9 +14,9 @@ const MainContent = ({scRef}) => {
             <Blank num={'4vh'}/>
             <Contents>
               <div >
-                오리는 귀여워요 우주 좋아<br/>
-                오리는 귀여워요 우주 좋아<br/>
-                오리는 귀여워요 우주 좋아<br/><br/>
+              급성심정지는 심장 활동이 급격히 저하되거나 멈춘 상태로<br/>
+              질병청에 따르면, 지난 상반기 발생한 급성심정지 환자는<br/>
+              총 <Point color={'#FF9B9B'}>1만 7668명</Point> 이라고 합니다.<br/><br/>
               </div>
               <div >
               오리는 귀여워요 우주 좋아<br/>

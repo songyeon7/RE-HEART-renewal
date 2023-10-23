@@ -81,7 +81,7 @@ const Desktop = styled.div`
 const TextButton = styled(Link)`
   color: ${(props) => (props.navBar ? "var(--text-contents, #524437)" : "#9A9A9A")};
   font-family: 'Pretendard', sans-serif;
-  font-size: 19px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
