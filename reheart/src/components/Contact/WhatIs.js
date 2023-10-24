@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import aed from '../../assets/arrow.svg';
 import {Contents, MainContainer, MainWrapper, Point, Title} from "../../atoms/Atomic";
 
 const Whatis = ({scRef}) => {
@@ -9,7 +10,7 @@ const Whatis = ({scRef}) => {
         <TempContainer>
           <div>
             <Title >
-            작년 상반기 <Point size={'36'} weight={'600'}>급성심정지환자</Point> 1만7668명 발생…생존률 7.3%
+            작년 상반기 <Point size={'36'} weight={'600'}>급성심정지환자</Point> 1만7668명 발생
             </Title>
             <Blank num={'4vh'}/>
             <Contents>
@@ -32,12 +33,23 @@ const Whatis = ({scRef}) => {
               </div>
             </Contents>
           </div>
+          <Aed src={aed}/>
         </TempContainer>
       </MainWrapper>
     </MainContainer>
   );
 };
 
+const Aed = styled.img`
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  @media(max-width: 1080px) {
+    height: 250px;
+    width: 250px;
+  }
+`;
 const Blank = styled.div`
   width: 0;
   height: ${(props) => props.num};
