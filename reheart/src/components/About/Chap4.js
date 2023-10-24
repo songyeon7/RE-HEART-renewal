@@ -10,14 +10,16 @@ const Chap4 = ({scRef}) => {
         <TempContainer>
           <div>
             <MiniTitle >
-            <Point size={'48'} weight={'600'}>1. 전원 켜기</Point> 
+            <Point size={'48'} weight={'600'}>4. 심장충격(제세동) 시행</Point> 
             </MiniTitle>
             <Blank num={'4vh'}/>
             <Contents>
               <div ><br/>
-              먼저 심장충격기(자동제세동기)를 <br/>
-              심폐소생술에 방해가 되지않는 위치에 놓은 뒤에 <br/>
-              전원 버튼을 누른다.<br/><br/>
+              심장충격(제세동)이 필요한 경우에만 <br/>
+              심장충격(제세동) 버튼이 깜박이기 시작한다. <br/><br/>
+              깜박이는 버튼을 눌러 심장충격(제세동)을 시행한다. <br/><br/>
+              심장충격(제세동) 버튼을 누르기 전에는 <br/>
+              반드시 다른 사람이 환자에게서 떨어져 있는지 확인하여야 한다.<br/><br/>
               </div>
             </Contents>
           </div>

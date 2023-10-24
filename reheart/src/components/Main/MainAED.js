@@ -11,7 +11,7 @@ const MainAED = ({scRef}) => {
          <Aed src={aed}/>
           <div>
             <MiniTitle >
-            내 주변 <Point size={'36'} weight={'600'}>AED기기</Point> 위치 찾아보기
+            알아보아요 <Point size={'36'} weight={'600'}>AED</Point> 
             </MiniTitle>
             <Blank num={'4vh'}/>
             <Contents>

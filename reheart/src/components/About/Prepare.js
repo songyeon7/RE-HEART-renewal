@@ -8,6 +8,7 @@ const Prepare = ({scRef}) => {
     <MainContainer ref={scRef}>
       <MainWrapper gap={'100px'}>
         <TempContainer>
+          <Aed src={aed}/>
           <div>
             <Title >
             <Point size={'48'} weight={'600'}>자동심장충격기(AED) </Point> 사용법
@@ -16,16 +17,17 @@ const Prepare = ({scRef}) => {
             <Contents>
               <div ><br/>
               <div>
-              <MiniTitle>준비하기</MiniTitle><br/><br/>
+              <MiniTitle>준비하기</MiniTitle><br/>
               </div>
               환자의 확인(신고 병행 119 또는 1339)<br/>
-              자동심장충격기(AED)가 준비되기 전까지 심폐소생술(CPR)을 합니다.<br/>
-              심장충격기(자동제세동기)는 반응과 정상적인 호흡이 없는 심정지 환자에게만 사용해야 하며, <br/>
-              심폐소생술 시행 중에 심장충격기(자동제세동기)가 도착하면 지체 없이 적용해야 한다. <br/>
+              자동심장충격기(AED)가 준비되기 전까지 심폐소생술(CPR)을 합니다.<br/><br/>
+              심장충격기(자동제세동기)는 반응과 정상적인 호흡이 없는 <br/>
+              심정지 환자에게만 사용해야 하며, <br/>
+              심폐소생술 시행 중에 심장충격기(자동제세동기)가 도착하면 <br/>
+              지체 없이 적용해야 한다. <br/>
               </div>
             </Contents>
           </div>
-          <Aed src={aed}/>
         </TempContainer>
       </MainWrapper>
     </MainContainer>

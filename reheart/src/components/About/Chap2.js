@@ -10,14 +10,15 @@ const Chap2 = ({scRef}) => {
         <TempContainer>
           <div>
             <MiniTitle >
-            <Point size={'48'} weight={'600'}>1. 전원 켜기</Point> 
+            <Point size={'48'} weight={'600'}>2. 두 개의 패드 부착</Point> 
             </MiniTitle>
             <Blank num={'4vh'}/>
             <Contents>
               <div ><br/>
-              먼저 심장충격기(자동제세동기)를 <br/>
-              심폐소생술에 방해가 되지않는 위치에 놓은 뒤에 <br/>
-              전원 버튼을 누른다.<br/><br/>
+              패드 1 : 오른쪽 빗장뼈 아래<br/>
+              패드 2 : 왼쪽 젖꼭지 아래의 중간겨드랑선<br/>
+              패드 부착부위에 이물질이 있다면 제거하며, <br/>
+              패드와 심장충격기(자동제세동기) 본체가 분리되어 있는 경우에는 연결한다.<br/><br/>
               </div>
             </Contents>
           </div>
