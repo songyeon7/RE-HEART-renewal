@@ -87,7 +87,7 @@ const TextButton = styled(Link)`
   line-height: normal;
   background: none;
   border: 0;
-  text-decoratio n: none;
+  text-decoration: none;
   padding: 10px 15px;
   border-radius: 5px;
   transition: all 0.3s;
