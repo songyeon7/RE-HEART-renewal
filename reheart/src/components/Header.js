@@ -87,12 +87,13 @@ const TextButton = styled(Link)`
   line-height: normal;
   background: none;
   border: 0;
-  text-decoration: none;
+  text-decoratio n: none;
   padding: 10px 15px;
   border-radius: 5px;
   transition: all 0.3s;
   &:hover {
     background: rgba(0, 0, 0, 0.07);
+    color: var(--text-title, #2C231E);
   }
 `;
 const Right = styled.div`
