@@ -20,12 +20,12 @@ export const Title = styled.div`
   width: auto;
   color: var(--text-title, #2C231E);
   font-family: 'Pretendard';
-  font-size: 35px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   @media(max-width: 1080px){
-    font-size: 27px;
+    font-size: 26px;
   }
 `;
 export const Contents = styled.div`
@@ -55,11 +55,11 @@ export const MiniTitle = styled.div`
   width: auto;
   color: var(--text-title, #2C231E);
   font-family: 'Pretendard';
-  font-size: 25px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   @media(max-width: 1080px){
-    font-size: 27px;
+    font-size: 26px;
   }
 `;
