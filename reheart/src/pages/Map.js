@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "../components/Header";
-import FooterAbout from '../components/Footer_about';
+import Footer from "../components/Footer";
+import Kakao from '../components/Map/Kakao';
 
 
 const Main = () => {
@@ -14,8 +15,8 @@ const Main = () => {
   return (
     <>
       <Header isNotHome={false}/>
-      
-      <FooterAbout/>
+      <Kakao scRef={ref}/>
+      <Footer/>
     </>
   );
 };

@@ -38,11 +38,6 @@ const MapComponent = () => {
           <Input
             type="text"
             id="tbox"
-            onKeyPress={(event) => {
-              if (event.key === 'Enter') {
-                document.getElementById('searchButton').click();
-              }
-            }}
           />
         </div>
       </div>
@@ -50,14 +45,6 @@ const MapComponent = () => {
       <div style={{ position: 'absolute' }}>
         <Button id="searchButton"></Button>
       </div>
-
-      {/* <div style={{ position: 'absolute' }}>
-        <CallIcon className="call119">
-          <a href="tel:119">
-            <CallImage src="images/call.svg" />
-          </a>
-        </CallIcon>
-      </div> */}
     </div>
   );
 };
@@ -81,24 +68,6 @@ top: 130px;
 z-index: 10;
 `;
 
-const CallIcon = styled.div`
-border: 3px solid #ff9b9b;
-border-radius: 100%;
-background-color: #fff5f5;
-width: 50px;
-height: 50px;
-text-align: center;
-z-index: 10;
-position: fixed;
-left: 100px;
-top: 650px;
-`;
-
-const CallImage = styled.img`
-width: 30px;
-height: 30px;
-margin-top: 10px;
-`;
 
 
 export default MapComponent;
