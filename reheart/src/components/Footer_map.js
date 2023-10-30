@@ -2,15 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import './Footer.css';
 
-const FooterAbout = () => {
+const FooterMap = () => {
   return (
     <Container>
       <Wrapper>
         <Item>
           <Texts>
-            <Contents>
-              이미지 출처 : 질병관리청 손상예방관리과 (043-719-7418)
-            </Contents>
             <Contents>
               ©️songyeon7  |  Develop : dnwntjsg
             </Contents>
@@ -73,16 +70,16 @@ const Wrapper = styled.div`
 `;
 const Container = styled.div`
   width: 100%;
-  height: 200px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #fff5f5;
   @media(max-width: 1023px) {
-    height: 200px;
+    height: 60px;
   }
   @media(max-width: 740px) {
     height: max-content;
   }
 `;
-export default FooterAbout;
+export default FooterMap;

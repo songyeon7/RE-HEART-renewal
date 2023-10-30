@@ -18,7 +18,7 @@ function Kakao() {
             width: '100%',
             height: '800px'
         }}></div>
-    );
+    ); 
 }
 
 export default Kakao;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Kakao from '../components/Map/Kakao';
+import FooterMap from '../components/Footer_map';
 
 
 const Main = () => {
@@ -16,7 +16,7 @@ const Main = () => {
     <>
       <Header isNotHome={false}/>
       <Kakao scRef={ref}/>
-      <Footer/>
+      <FooterMap/>
     </>
   );
 };
