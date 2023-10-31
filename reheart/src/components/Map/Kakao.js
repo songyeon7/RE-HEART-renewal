@@ -66,6 +66,7 @@ function Kakao() {
     setMarkers([]);
 
     if (searchKeyword.trim() !== "" && map !== null) {
+      let found = false;
       for (let i = 0; i < 5000; i++) {
         const stringVal = myData[i].buildaddress;
         if (stringVal.includes(searchKeyword)) {
@@ -78,6 +79,10 @@ function Kakao() {
             position: markerPosition,
             title: myData[i].buildplace,
           });
+          if (!found) {
+            map.panTo(markerPosition);
+            found = true;
+          }
 
           // Create an info window
           const infowindow = new window.kakao.maps.InfoWindow({
