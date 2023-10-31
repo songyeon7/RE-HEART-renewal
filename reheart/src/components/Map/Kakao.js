@@ -58,6 +58,12 @@ function Kakao() {
   };
 
   const handleSearch = () => {
+    
+    markers.forEach((marker) => {
+      marker.setMap(null); // Remove marker from the map
+    });
+    setMarkers([]); // Clear markers array
+
     if (searchKeyword.trim() !== "" && map !== null) {
       for (let i = 0; i < 5000; i++) {
         const stringVal = myData[i].buildaddress;
