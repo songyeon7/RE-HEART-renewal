@@ -49,7 +49,7 @@ function Kakao() {
         <div style={{ position: 'relative' }}>
             <div style={{ 
                 position: 'absolute', 
-                top: '100px',
+                top: '150px',
                 left: '50%', 
                 transform: 'translateX(-50%)', 
                 zIndex: '10', 
@@ -66,7 +66,7 @@ function Kakao() {
                     onChange={(e) => setSearchKeyword(e.target.value)}
                     placeholder="주소를 입력하세요"
                     style={{
-                        width: '800px',
+                        width: '1000px',
                         height: '30px',
                         marginRight: '10px',
                         border: 'none',
