@@ -49,6 +49,9 @@ function Kakao() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                backgroundColor: '#fff', // Background color
+                border: '1px solid #FF9B9B',
+                borderRadius: '5px', // Rounded corners
             }}>
                 <input
                     type="text"
@@ -59,25 +62,24 @@ function Kakao() {
                         width: '800px',
                         height: '30px',
                         marginRight: '10px',
-                        border: '1px solid #FF9B9B',
-                        borderRadius: '5px', // Rounded corners
-                        backgroundColor: '#fff', // Background color
+                        border: 'none', // Remove border
                         padding: '5px', // Padding for the input
+                        borderRadius: '5px', // Rounded corners
                     }}
                 />
                 <button
                     onClick={handleSearch}
                     style={{
                         height: '40px',
-                        backgroundColor: '#fff', // Background color
-                        border: '1px solid #FF9B9B',
                         color: 'transparent', // Make text transparent
                         cursor: 'pointer',
-                        borderRadius: '5px', // Rounded corners
                         backgroundImage: `url(${searchIcon})`, // Use the imported search.svg
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
+                        border: 'none', // Remove border
+                        backgroundColor: '#fff5f5', // Background color
+                        borderRadius: '0px 5px 5px 0px', // Rounded corners
                     }}
                 >
                     Search
