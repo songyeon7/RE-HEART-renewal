@@ -46,7 +46,7 @@ function Kakao() {
                         position: coords,
                         map: map
                     });
-                    setMarkers([marker]);
+                    
 
                     map.setCenter(coords);
                 } else {
