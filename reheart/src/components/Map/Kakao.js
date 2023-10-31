@@ -1,5 +1,5 @@
 import React, { useState, useEffect, setSearchResult } from 'react';
-import searchIcon from '../../assets/search.svg'; // Import the search.svg file
+import searchIcon from '../../assets/search.svg';
 import data from '../../data/data.json';
 
 const { kakao } = window;
@@ -20,7 +20,6 @@ function Kakao() {
         fetch(data)
             .then(response => response.json())
             .then(data => {
-                // Save the data in state
                 setSearchResult(data);
             })
             .catch(error => {
@@ -60,9 +59,9 @@ function Kakao() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#fff', // Background color
+                backgroundColor: '#fff', 
                 border: '1px solid #FF9B9B',
-                borderRadius: '5px', // Rounded corners
+                borderRadius: '5px', 
             }}>
                 <input
                     type="text"
@@ -73,24 +72,24 @@ function Kakao() {
                         width: '800px',
                         height: '30px',
                         marginRight: '10px',
-                        border: 'none', // Remove border
-                        padding: '5px', // Padding for the input
-                        borderRadius: '5px', // Rounded corners
+                        border: 'none',
+                        padding: '5px', 
+                        borderRadius: '5px',
                     }}
                 />
                 <button
                     onClick={handleSearch}
                     style={{
                         height: '40px',
-                        color: 'transparent', // Make text transparent
+                        color: 'transparent',
                         cursor: 'pointer',
-                        backgroundImage: `url(${searchIcon})`, // Use the imported search.svg
+                        backgroundImage: `url(${searchIcon})`, 
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
-                        border: 'none', // Remove border
-                        backgroundColor: '#fff5f5', // Background color
-                        borderRadius: '0px 5px 5px 0px', // Rounded corners
+                        border: 'none', 
+                        backgroundColor: '#fff5f5', 
+                        borderRadius: '0px 5px 5px 0px',
                     }}
                 >
                     Search
