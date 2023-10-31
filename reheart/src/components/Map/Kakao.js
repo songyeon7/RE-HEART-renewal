@@ -1,56 +1,45 @@
-import React, { useState, useEffect, setSearchResult } from 'react';
+import React, { useState, useEffect } from 'react';
 import searchIcon from '../../assets/search.svg';
-import data from '../../data/data.json';
-
-const { kakao } = window;
+import localData from '../../data/data.json';  // 로컬 데이터를 임포트합니다.
 
 function Kakao() {
     const [searchKeyword, setSearchKeyword] = useState('');
     const [map, setMap] = useState(null);
     const [markers, setMarkers] = useState([]);
-
+    const [searchResult, setSearchResult] = useState([]);  // 검색 결과 상태를 추가합니다.
 
     useEffect(() => {
         const container = document.getElementById('map');
         const options = {
-            center: new kakao.maps.LatLng(37.542268, 126.967049),
+            center: new window.kakao.maps.LatLng(37.542268, 126.967049),
             level: 3
         };
-        const newMap = new kakao.maps.Map(container, options);
+
+        const newMap = new window.kakao.maps.Map(container, options);
         setMap(newMap);
-        
-        fetch(data)
-            .then(response => response.json())
-            .then(data => {
-                setSearchResult(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
+        setSearchResult(localData);
     }, []);
 
     const handleSearch = () => {
         if (searchKeyword.trim() !== '' && map !== null) {
-            const geocoder = new kakao.maps.services.Geocoder();
+            const geocoder = new window.kakao.maps.services.Geocoder();
 
             geocoder.addressSearch(searchKeyword, function (result, status) {
-                if (status === kakao.maps.services.Status.OK) {
+                if (status === window.kakao.maps.services.Status.OK) {
                     // Clear previous markers
-                    markers.forEach(marker => {
-                        marker.setMap(null);
-                    });
+                    markers.forEach(marker => marker.setMap(null));
 
-                    const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-
-                    const marker = new kakao.maps.Marker({
+                    const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+                    const marker = new window.kakao.maps.Marker({
                         position: coords,
                         map: map
                     });
-                    
+                    setMarkers([marker]);
 
                     map.setCenter(coords);
                 } else {
-                    alert('검색 결과가 없습니다.');
+                    // 사용자 경험을 개선하기 위한 커스텀 모달이나 메시지를 고려해 볼 수 있습니다.
+                    console.error('검색 결과가 없습니다.');
                 }
             });
         }
@@ -88,11 +77,12 @@ function Kakao() {
                 <button
                     onClick={handleSearch}
                     style={{
-                        height: '40px',
+                        height: '40px', // 입력 필드 높이에 맞게 조정
+                        width: '40px', // 버튼의 가로 크기를 명시적으로 설정
                         color: 'transparent',
                         cursor: 'pointer',
                         backgroundImage: `url(${searchIcon})`, 
-                        backgroundSize: 'contain',
+                        backgroundSize: 'cover', // 이미지가 버튼을 완전히 채우도록
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
                         border: 'none', 
