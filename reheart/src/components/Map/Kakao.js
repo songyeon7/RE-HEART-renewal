@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, setSearchResult } from 'react';
 import searchIcon from '../../assets/search.svg'; // Import the search.svg file
+import data from '../../data/data.json';
 
 const { kakao } = window;
 
@@ -15,6 +16,16 @@ function Kakao() {
         };
         const newMap = new kakao.maps.Map(container, options);
         setMap(newMap);
+        
+        fetch(data)
+            .then(response => response.json())
+            .then(data => {
+                // Save the data in state
+                setSearchResult(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
     }, []);
 
     const handleSearch = () => {
