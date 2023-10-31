@@ -39,7 +39,14 @@ function Kakao() {
 
     return (
         <div style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', zIndex: '1', display: 'flex' }}>
+            <div style={{ 
+                position: 'absolute', 
+                left: '50%', 
+                transform: 'translateX(-50%)', 
+                zIndex: '1', 
+                display: 'flex',
+                marginTop: '100px', 
+            }}>
                 <input
                     type="text"
                     value={searchKeyword}
@@ -49,8 +56,11 @@ function Kakao() {
                         width: '800px',
                         height: '30px',
                         marginRight: '10px',
-                        marginTop: '100px',
                         border: '1px solid #000',
+                        position: 'absolute',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        zIndex: '1', // Ensure the input is above the map
                     }}
                 />
                 <button onClick={handleSearch}>검색</button>
