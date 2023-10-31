@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import searchIcon from '../../assets/search.svg'; // Import the search.svg file
 
 const { kakao } = window;
 
@@ -68,14 +69,18 @@ function Kakao() {
                     onClick={handleSearch}
                     style={{
                         height: '40px',
-                        color: '#fff', // Background color
+                        backgroundColor: '#fff', // Background color
                         border: '1px solid #FF9B9B',
-                        color: '#000', // Text color
+                        color: 'transparent', // Make text transparent
                         cursor: 'pointer',
                         borderRadius: '5px', // Rounded corners
+                        backgroundImage: `url(${searchIcon})`, // Use the imported search.svg
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
                     }}
                 >
-                    검색
+                    Search
                 </button>
             </div>
             <div id="map" style={{ width: '100%', height: '800px' }}></div>
