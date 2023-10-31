@@ -7,6 +7,8 @@ const { kakao } = window;
 function Kakao() {
     const [searchKeyword, setSearchKeyword] = useState('');
     const [map, setMap] = useState(null);
+    const [markers, setMarkers] = useState([]);
+
 
     useEffect(() => {
         const container = document.getElementById('map');
@@ -33,12 +35,18 @@ function Kakao() {
 
             geocoder.addressSearch(searchKeyword, function (result, status) {
                 if (status === kakao.maps.services.Status.OK) {
+                    // Clear previous markers
+                    markers.forEach(marker => {
+                        marker.setMap(null);
+                    });
+
                     const coords = new kakao.maps.LatLng(result[0].y, result[0].x);
 
                     const marker = new kakao.maps.Marker({
                         position: coords,
                         map: map
                     });
+                    setMarkers([marker]);
 
                     map.setCenter(coords);
                 } else {
