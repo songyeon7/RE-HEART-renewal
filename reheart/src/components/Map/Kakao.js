@@ -39,12 +39,21 @@ function Kakao() {
 
     return (
         <div>
-            <div>
+            <div style={{
+                        position: 'absolute'
+            }}>
                 <input
                     type="text"
                     value={searchKeyword}
                     onChange={(e) => setSearchKeyword(e.target.value)}
                     placeholder="주소를 입력하세요"
+                    style={{
+                        width: '1000px',
+                        height: '30px',
+                        position: 'fixed',
+                        left: '270px',
+                        top: '130px',
+                    }}
                 />
                 <button onClick={handleSearch}>검색</button>
             </div>
@@ -55,7 +64,7 @@ function Kakao() {
         </div>
     );
 }
-
+ 
 // const input = {
 //     position: 'absolute',
 //     top: '20px', 
