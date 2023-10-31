@@ -58,10 +58,25 @@ function Kakao() {
                         width: '800px',
                         height: '30px',
                         marginRight: '10px',
-                        border: '1px solid #000',
+                        border: '1px solid #FF9B9B',
+                        borderRadius: '5px', // Rounded corners
+                        backgroundColor: '#fff', // Background color
+                        padding: '5px', // Padding for the input
                     }}
                 />
-                <button onClick={handleSearch}>검색</button>
+                <button
+                    onClick={handleSearch}
+                    style={{
+                        height: '40px',
+                        color: '#fff', // Background color
+                        border: '1px solid #FF9B9B',
+                        color: '#000', // Text color
+                        cursor: 'pointer',
+                        borderRadius: '5px', // Rounded corners
+                    }}
+                >
+                    검색
+                </button>
             </div>
             <div id="map" style={{ width: '100%', height: '800px' }}></div>
         </div>
