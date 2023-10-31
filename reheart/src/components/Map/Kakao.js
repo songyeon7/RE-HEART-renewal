@@ -41,11 +41,13 @@ function Kakao() {
         <div style={{ position: 'relative' }}>
             <div style={{ 
                 position: 'absolute', 
+                top: '100px',
                 left: '50%', 
                 transform: 'translateX(-50%)', 
-                zIndex: '1', 
+                zIndex: '10', 
                 display: 'flex',
-                marginTop: '100px', 
+                alignItems: 'center',
+                justifyContent: 'center',
             }}>
                 <input
                     type="text"
@@ -57,10 +59,6 @@ function Kakao() {
                         height: '30px',
                         marginRight: '10px',
                         border: '1px solid #000',
-                        position: 'absolute',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        zIndex: '1', // Ensure the input is above the map
                     }}
                 />
                 <button onClick={handleSearch}>검색</button>
