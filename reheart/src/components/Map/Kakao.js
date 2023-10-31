@@ -39,26 +39,23 @@ function Kakao() {
 
     return (
         <div style={{ position: 'relative' }}>
-            <input
-                type="text"
-                value={searchKeyword}
-                onChange={(e) => setSearchKeyword(e.target.value)}
-                placeholder="주소를 입력하세요"
-                style={{
-                    width: '1000px',
-                    height: '30px',
-                    position: 'absolute',
-                    top: '10px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    zIndex: '1', // Ensure the input is above the map
-                }}
-            />
-            <button onClick={handleSearch} style={{ position: 'absolute', top: '50px', left: '50%', transform: 'translateX(-50%)', zIndex: '1' }}>검색</button>
-            <div id="map" style={{
-                width: '100%',
-                height: '800px'
-            }}></div>
+            <div style={{ position: 'absolute', top: '10px', left: '50%', transform: 'translateX(-50%)', zIndex: '1', display: 'flex' }}>
+                <input
+                    type="text"
+                    value={searchKeyword}
+                    onChange={(e) => setSearchKeyword(e.target.value)}
+                    placeholder="주소를 입력하세요"
+                    style={{
+                        width: '800px',
+                        height: '30px',
+                        marginRight: '10px',
+                        marginTop: '100px',
+                        border: '1px solid #000',
+                    }}
+                />
+                <button onClick={handleSearch}>검색</button>
+            </div>
+            <div id="map" style={{ width: '100%', height: '800px' }}></div>
         </div>
     );
 }
