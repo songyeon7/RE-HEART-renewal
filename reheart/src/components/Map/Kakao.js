@@ -81,7 +81,7 @@ function Kakao() {
 
           // Create an info window
           const infowindow = new window.kakao.maps.InfoWindow({
-            content: `<div style="border: 1px solid #ff9b9b; border-radius: 5px; background-color: #fff5f5; padding: 10px;">
+            content: `<div style="border: 1px solid #ff9b9b; background-color: #fff5f5; padding: 10px;">
                         <strong>${myData[i].buildplace}</strong><br>
                         ${myData[i].buildaddress}
                       </div>`,
