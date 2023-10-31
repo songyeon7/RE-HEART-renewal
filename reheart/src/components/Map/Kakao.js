@@ -58,27 +58,53 @@ function Kakao() {
   };
 
   const handleSearch = () => {
-    
     markers.forEach((marker) => {
-      marker.setMap(null); // Remove marker from the map
+      marker.setMap(null);
+      // Close info windows associated with the markers
+      marker.infowindow.close();
     });
-    setMarkers([]); // Clear markers array
+    setMarkers([]);
 
     if (searchKeyword.trim() !== "" && map !== null) {
       for (let i = 0; i < 5000; i++) {
         const stringVal = myData[i].buildaddress;
         if (stringVal.includes(searchKeyword)) {
-          const markerPosition = new window.kakao.maps.LatLng(myData[i].wgs84lat, myData[i].wgs84lon);
+          const markerPosition = new window.kakao.maps.LatLng(
+            myData[i].wgs84lat,
+            myData[i].wgs84lon
+          );
           const marker = new window.kakao.maps.Marker({
             map: map,
             position: markerPosition,
             title: myData[i].buildplace,
           });
+
+          // Create an info window
+          const infowindow = new window.kakao.maps.InfoWindow({
+            content: `<div style="border: 1px solid #ff9b9b; border-radius: 5px; background-color: #fff5f5; padding: 10px;">
+                        <strong>${myData[i].buildplace}</strong><br>
+                        ${myData[i].buildaddress}
+                      </div>`,
+          });
+
+          // Add a mouseover event to show the info window on marker hover
+          window.kakao.maps.event.addListener(marker, "mouseover", function () {
+            infowindow.open(map, marker);
+          });
+
+          // Add a mouseout event to close the info window on marker mouseout
+          window.kakao.maps.event.addListener(marker, "mouseout", function () {
+            infowindow.close();
+          });
+
+          marker.infowindow = infowindow; // Save the info window with the marker
+
           setMarkers((prevMarkers) => [...prevMarkers, marker]);
         }
       }
     }
   };
+
 
   useEffect(() => {
     getUserLocation();
